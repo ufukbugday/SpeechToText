@@ -15,11 +15,11 @@ namespace TextToSpeech
 				Console.WriteLine("İstediğini yaz: ");
 				var text = Console.ReadLine();
 				var ssml = HandleText(text);
-				Speak(ssml, bearerToken, client);
+				HandleAudio(ssml, bearerToken, client);
 			}
 		}
 
-		private static void Speak(string ssml, string bearerToken, HttpClient client)
+		private static void HandleAudio(string ssml, string bearerToken, HttpClient client)
 		{
 			var audioRequest = new HttpRequestMessage(HttpMethod.Post,
 				"https://eastus.tts.speech.microsoft.com/cognitiveservices/v1");
